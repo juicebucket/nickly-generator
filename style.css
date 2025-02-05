@@ -45,19 +45,14 @@ body {
 }
 
 /* Navigation Menu */
-.nav {
+.nav, .nav ul {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
 .nav ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .nav a {
@@ -67,16 +62,9 @@ body {
     font-weight: 600;
 }
 
-span {
-    color: black;
-}
-
-/* Information section */
+/* Information Section */
 .information {
     text-align: center;
-}
-
-.information h1, .information p, .information span {
     text-transform: uppercase;
 }
 
@@ -85,7 +73,7 @@ span {
     font-size: 45px;
 }
 
-.information p, .information span {
+.information p {
     font-size: 16px;
     line-height: 30px;
 }
@@ -94,15 +82,19 @@ span {
     font-weight: 600;
 }
 
-/* Language selection */
-.language-selector {
-    display: flex;
-    align-items: center;
+/* Language & Nationality selection */
+.language-selector, .nationality-selector { 
     position: relative;
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
 }
 
+.nationality-selector.active .nationality-dropdown, .language-selector.active .lang-dropdown {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    transform: translateY(0);
+}
+
+/* Language selection */
 .lang-btn {
     background: white;
     border: 2px solid black;
@@ -127,8 +119,7 @@ span {
     left: 0;
     width: 100%;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     list-style: none;
     padding: 10px;
     margin: 5px 0;
@@ -137,14 +128,6 @@ span {
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-}
-
-.language-selector.active .lang-dropdown {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-    transform: translateY(0);
 }
 
 .lang-dropdown li {
@@ -157,8 +140,60 @@ span {
     background: #f0f0f0;
 }
 
-.language-selector.active .lang-btn {
-    border-color: blue;
+/* Nationality selection */
+.nationality-btn {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px;
+    outline: none;
+    appearance: none;
+}
+
+.selected-nationality {
+    font-weight: 400;
+    color: #333;
+}
+
+.nationality-btn:hover {
+    background: #f0f0f0;
+}
+
+.nationality-dropdown {
+    width: 100%;
+    position: absolute;
+    max-height: 100px; 
+    overflow-y: auto;
+    background: white;
+    border-radius: 10px;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.nationality-dropdown li {
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nationality-dropdown li:hover {
+    background: #f0f0f0;
 }
 
 /* Right Container */
@@ -184,13 +219,6 @@ span {
 .generator-container {
     width: 100%;
     max-width: 500px;
-}
-
-.copyright-link {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    text-shadow: 0 0 5px white;
 }
 
 /* Nickname box */
@@ -255,7 +283,7 @@ span {
     background-image: url('images/female-icon.svg');
 }
 
-.gender-input:checked + .gender-card::after {
+.gender-input:checked {
     content: "✔";
     font-size: 12px;
     color: white;
@@ -273,89 +301,24 @@ span {
     justify-content: center;
 }
 
-/* Nationality selection */
-.nationality-btn {
-    width: 100%;
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 12px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px;
-    outline: none;
-    appearance: none;
-}
-
-.selected-nationality {
-    font-weight: 400;
-    color: #333;
-}
-
-.nationality-btn:hover {
-    background: #f0f0f0;
-}
-
-.nationality-dropdown {
-    width: 100%;
-    position: absolute;
-    max-height: 100px; 
-    overflow-y: auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px;
-    margin: 5px 0;
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-    z-index: 1000;
-}
-
-.nationality-selector {
-    position: relative;
-}
-
-.nationality-selector.active .nationality-dropdown {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-    transform: translateY(0);
-}
-
-.nationality-dropdown li {
-    padding: 10px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.nationality-dropdown li:hover {
-    background: #f0f0f0;
-}
-
 /* Copyright */
 .copyright {
-    font-size: 14px;
+    font-size: 10px;
     color: white;
     margin-top: 30px;
     position: relative;
 }
 
+.copyright a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
 /* Generate button */
 .generate-button {
     width: 50%;
-    max-width: 500px;
+    max-width: 550px;
     background: white;
     border-radius: 10px;
     color: black;
@@ -366,8 +329,7 @@ span {
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
-    font-weight: bold;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-weight: 700;
 }
 
 .generate-button:hover {
@@ -391,8 +353,7 @@ span {
         padding: 20px 0;
     }
 
-    .left-container,
-    .right-container {
+    .left-container, .right-container {
         width: 100%;
         margin: 0 auto;
         max-width: 800px;
