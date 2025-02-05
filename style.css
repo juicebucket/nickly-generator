@@ -94,18 +94,35 @@ body {
     transform: translateY(0);
 }
 
+.lang-dropdown, .nationality-dropdown {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.lang-btn, .nationality-btn {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    color: black;
+}
+
 /* Language selection */
 .lang-btn {
-    background: white;
     border: 2px solid black;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    color: black;
-    display: flex;
-    align-items: center;
     gap: 8px;
 }
 
@@ -114,20 +131,9 @@ body {
 }
 
 .lang-dropdown {
-    position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    background: white;
-    border-radius: 10px;
-    list-style: none;
-    padding: 10px;
-    margin: 5px 0;
-    display: none;
     flex-direction: column;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
 }
 
 .lang-dropdown li {
@@ -142,17 +148,11 @@ body {
 
 /* Nationality selection */
 .nationality-btn {
+    border: 2px;
     width: 100%;
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
     font-size: 12px;
     text-align: left;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    border: 2px;
     outline: none;
     appearance: none;
 }
@@ -162,24 +162,13 @@ body {
     color: #333;
 }
 
-.nationality-btn:hover {
-    background: #f0f0f0;
-}
-
 .nationality-dropdown {
-    width: 100%;
-    position: absolute;
     max-height: 100px; 
     overflow-y: auto;
-    background: white;
-    border-radius: 10px;
-    list-style: none;
-    padding: 10px;
-    margin: 5px 0;
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
+}
+
+.nationality-btn:hover {
+    background: #f0f0f0;
 }
 
 .nationality-dropdown li {
