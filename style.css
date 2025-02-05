@@ -118,6 +118,22 @@ body {
     color: black;
 }
 
+.lang-dropdown li:hover, .nationality-dropdown li:hover { 
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.nationality-btn:hover, .lang-btn:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.lang-dropdown li, .nationality-dropdown li {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
 /* Language selection */
 .lang-btn {
     border: 2px solid black;
@@ -126,24 +142,10 @@ body {
     gap: 8px;
 }
 
-.lang-btn:hover {
-    background: #f0f0f0;
-}
-
 .lang-dropdown {
     top: 100%;
     left: 0;
     flex-direction: column;
-}
-
-.lang-dropdown li {
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.lang-dropdown li:hover {
-    background: #f0f0f0;
 }
 
 /* Nationality selection */
@@ -167,22 +169,12 @@ body {
     overflow-y: auto;
 }
 
-.nationality-btn:hover {
-    background: #f0f0f0;
-}
-
 .nationality-dropdown li {
-    padding: 10px;
+    font-size: 12px;
     text-align: left;
     font-weight: 600;
-    font-size: 12px;
-    cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
-}
-
-.nationality-dropdown li:hover {
-    background: #f0f0f0;
 }
 
 /* Right Container */
@@ -234,7 +226,7 @@ body {
     text-align: center;
     border: none;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
     background: none;
     outline: none;
     padding-left: 10px;
@@ -279,9 +271,9 @@ body {
     position: absolute;
     right: 5px;
     top: 5px;
-    font-weight: bold;
+    font-weight: 700;
     background: #0243E7;
-    box-shadow:0 0 10px #0243E7;
+    box-shadow: 0 0 10px #0243E7;
     border-radius: 10px;
     width: 30px;
     height: 30px;
