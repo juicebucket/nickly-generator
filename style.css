@@ -14,7 +14,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Main Container */
 .main-container {
     display: flex;
     width: 95%;
@@ -39,7 +38,7 @@ body {
 }
 
 .logo img {
-    width: 98px;
+    width: 100px;
     height: auto;
     display: block;
 }
